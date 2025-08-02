@@ -5,6 +5,7 @@ from PyQt6.QtGui import QIcon
 import os
 
 from .pages.measurement_page import MeasurementPage
+from .pages.fixed_prices_page import PricesPage
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -27,6 +28,8 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.tabs)
 
         self.measurement_page = MeasurementPage()
+        self.prices_page = PricesPage()
 
         self.tabs.addTab(self.measurement_page, "📐 measurements")
+        self.tabs.addTab(self.prices_page, "💵 dollar and euro")
 
